@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 22% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 22% 11%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 20% 94%;
+    --accent-foreground: 222 22% 11%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 222 47% 11%;
+
+    /* Semantic skill/match colors */
+    --success: 152 56% 38%;
+    --success-soft: 152 56% 94%;
+    --warning: 38 92% 50%;
+    --warning-soft: 38 92% 94%;
+    --danger: 0 72% 51%;
+    --danger-soft: 0 72% 95%;
+    --info: 217 91% 60%;
+    --info-soft: 217 91% 94%;
+    --neutral-skill: 215 16% 47%;
+    --neutral-skill-soft: 210 20% 94%;
+
+    --chart-1: 152 56% 38%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 217 91% 60%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 262 52% 56%;
+    --radius: 0.625rem;
+  }
+  .dark {
+    --background: 222 24% 7%;
+    --foreground: 210 40% 96%;
+    --card: 222 22% 9%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 22% 9%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 210 40% 96%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 16% 14%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 16% 14%;
+    --muted-foreground: 217 14% 60%;
+    --accent: 222 16% 16%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 222 16% 18%;
+    --input: 222 16% 18%;
+    --ring: 210 40% 96%;
+
+    --success: 152 56% 42%;
+    --success-soft: 152 40% 16%;
+    --warning: 38 92% 55%;
+    --warning-soft: 38 60% 16%;
+    --danger: 0 62% 50%;
+    --danger-soft: 0 40% 16%;
+    --info: 217 91% 65%;
+    --info-soft: 217 50% 16%;
+    --neutral-skill: 215 16% 60%;
+    --neutral-skill-soft: 210 16% 16%;
+
+    --chart-1: 152 56% 42%;
+    --chart-2: 38 92% 55%;
+    --chart-3: 217 91% 65%;
+    --chart-4: 0 62% 50%;
+    --chart-5: 262 52% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
